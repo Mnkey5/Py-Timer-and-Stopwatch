@@ -24,14 +24,11 @@ Stopwatch = [
 startpage = sg.Window("Start", Home, margins=(400, 300))
 tim = sg.Window("Timer", Timer)
 sto = sg.Window("Stopwatch", Stopwatch)
-
-
 while True:
     event, values = startpage.read()
     if event == sg.WIN_CLOSED:
         break
     if event == "Timer":
-        # Show the timer window
         event, values = tim.read()
         if event == "Start":
             # Get the timer length from the input field
@@ -49,9 +46,6 @@ while True:
     if event == "Stopwatch":
         x=False
         event, values = sto.read()
-
-        # Start the stopwatch loop
-            # Check for events on the stopwatch page
         if event == "Start / Stop" or x == True:
             x=True
             counter = 0
@@ -59,4 +53,3 @@ while True:
                 print(counter)
                 time.sleep(0.1)
                 counter = counter + Decimal('.1')
-                #event, values = sto.read()
